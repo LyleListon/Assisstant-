@@ -1,0 +1,10 @@
+# Core dependencies
+selenium>=4.0.0
+webdriver_manager>=3.8.0  # For automated webdriver installation
+typing-extensions>=4.0.0  # For enhanced type hints
+mypy>=1.0.0              # For static type checking
+
+# Development dependencies
+pytest>=7.0.0            # For testing
+black>=22.0.0           # For code formatting
+flake8>=4.0.0          # For linting
