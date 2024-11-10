@@ -20,17 +20,18 @@ class FileOps:
         """Process incoming file operation requests"""
         try:
             action = request.get("action")
+            request_id = request.get("id")
             if not action:
-                return self._error_response(request, "No action specified")
+                return self._error_response(request_id if isinstance(request_id, str) else None, "No action specified")
             
             handler = self.supported_actions.get(action)
             if not handler:
-                return self._error_response(request, f"Unsupported action: {action}")
+                return self._error_response(request_id if isinstance(request_id, str) else None, f"Unsupported action: {action}")
             
             return handler(request.get("data", {}))
             
         except Exception as e:
-            return self._error_response(request, str(e))
+            return self._error_response(None, str(e))
     
     def _read_file(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """Read file contents"""
