@@ -1,6 +1,6 @@
 # Core dependencies
 selenium>=4.0.0
-types-selenium>=4.0.0    # Type stubs for selenium
+types-selenium==3.141.9    # Latest available version
 webdriver_manager>=3.8.0  # For automated webdriver installation
 typing-extensions>=4.0.0  # For enhanced type hints
 mypy>=1.0.0              # For static type checking
